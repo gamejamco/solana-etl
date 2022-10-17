@@ -18,6 +18,7 @@
 
 import contextlib
 import csv
+import itertools
 import json
 import logging
 from typing import List
@@ -151,3 +152,10 @@ def is_block_range(start, end):
     """Checks for a valid block number."""
     return ((not isinstance(start, str) or start.isdigit()) and 0 <= int(start) <= 9999999999999999 and
             (not isinstance(end, str) or end.isdigit()) and 0 <= int(end) <= 9999999999999999)
+
+
+def pairwise(iterable):
+    """s -> (s0,s1), (s1,s2), (s2, s3), ..."""
+    a, b = itertools.tee(iterable)
+    next(b, None)
+    return zip(a, b)

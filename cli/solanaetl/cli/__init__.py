@@ -23,6 +23,7 @@ from solanaetl.cli.extract_accounts import extract_accounts
 from solanaetl.cli.extract_field import extract_field
 from solanaetl.cli.extract_token_transfers import extract_token_transfers
 from solanaetl.cli.extract_tokens import extract_tokens
+from solanaetl.cli.get_block_range_for_timestamps import get_block_range_for_timestamps
 
 
 @click.group()
@@ -34,7 +35,8 @@ def cli(ctx):
 
 # export
 cli.add_command(export_all, "export_all")
-cli.add_command(export_blocks_and_transactions, "export_blocks_and_transactions")
+cli.add_command(export_blocks_and_transactions,
+                "export_blocks_and_transactions")
 cli.add_command(export_instructions, "export_instructions")
 
 # extract
@@ -44,3 +46,5 @@ cli.add_command(extract_tokens, "extract_tokens")
 
 # utils
 cli.add_command(extract_field, "extract_field")
+cli.add_command(get_block_range_for_timestamps,
+                "get_block_range_for_timestamps")

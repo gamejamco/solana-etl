@@ -64,7 +64,7 @@ Extract token transfer:
 
 ---
 
-Export accounts:
+Extract accounts:
 
 ```bash
 > solanaetl extract_accounts \
@@ -74,12 +74,22 @@ Export accounts:
 
 ---
 
-Export tokens:
+Extract tokens:
 
 ```bash
 > solanaetl extract_tokens \
     -a ./accounts.csv \
     -o tokens.csv
+```
+
+---
+
+Get block range for timestamps
+
+```bash
+> solanaetl get_block_range_for_timestamps \
+    -s 1657520907 \
+    -e 1657524507
 ```
 
 ## Test
